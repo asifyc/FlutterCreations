@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:vloc/src/Resources/incrementRepository.dart';
 
 part 'counter_event.dart';
@@ -18,6 +19,7 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
     CounterEvent event,
   ) async* {
     print("The function mapEvent 2 state is added");
+    debugPrint("Debug Console added");
     if(event is Increment){
       final counterValue =  incrementRespository.incrementVal();
       yield CounterIncremented(counterValue);
